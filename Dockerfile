@@ -1,4 +1,4 @@
-FROM 65a6a5f4dbc1
+FROM kushalchawda/tensorflow-pandas-quandl-numpy:latest
 
 MAINTAINER daniel darcher005@gmail.com
 
@@ -9,7 +9,7 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -yq cron vim
 
-RUN pip3 install redis elasticsearch pymysql tornado
+RUN pip3 install scipy redis elasticsearch pymysql tornado
 
 RUN apt-get clean
  
