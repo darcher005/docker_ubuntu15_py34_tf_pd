@@ -26,7 +26,6 @@ RUN apt-get clean && apt-get upgrade -y && apt-get update -y --fix-missing
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -yq python3-numpy python3-scipy
 
 RUN pip3 install -U wheel six sklearn pandas requests
-RUN pip3 install -U wheel quandl
 RUN pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.6.0-cp34-none-linux_x86_64.whl
 
 RUN echo "Asia/Shanghai" > /etc/timezone
@@ -39,7 +38,7 @@ RUN mkdir /var/run/sshd
 RUN echo 'root:danielcontainer' | chpasswd
 RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
-RUN pip3 install scipy redis elasticsearch pymysql tornado
+RUN pip3 install redis elasticsearch pymysql tornado
 
 RUN apt-get clean
 
